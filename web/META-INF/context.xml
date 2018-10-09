@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/wjdb">
+  <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" maxActive="20" maxIdle="2" maxWait="500000" name="wjdb" password="Emswjdb2018" type="javax.sql.DataSource" url="jdbc:sqlserver://192.168.10.150:1433;DatabaseName=wjdb" username="sa" defaultAutoCommit="true" removeAbandoned="true" removeAbandonedTimeout="1000"/>
+</Context>
