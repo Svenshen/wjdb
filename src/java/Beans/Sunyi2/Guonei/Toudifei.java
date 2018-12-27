@@ -67,6 +67,43 @@ public class Toudifei extends Feiyong{
         }
     };
      
+     final static HashMap<String,Toudifei> toudifei201812 = new HashMap<String,Toudifei>(){
+        {
+            put("安徽省",new Toudifei(1.5,1.5,2.05) );
+            put("北京",new Toudifei(2.05,2.05,2.05));
+            put("福建省",new Toudifei(2.05,2.05,2.05));
+            put("甘肃省",new Toudifei(2.05,2.05,2.05));
+            put("广东省",new Toudifei(2.05,2.05,2.05));
+            put("广西壮族自治区",new Toudifei(2.05,2.05,2.05));
+            put("贵州省",new Toudifei(2.05,2.05,2.05));
+            put("海南省",new Toudifei(2.05,2.05,2.05));
+            put("河北省",new Toudifei(2.05,2.05,2.05));
+            put("河南省",new Toudifei(2.05,2.05,2.05));
+            put("黑龙江省",new Toudifei(2.05,2.05,2.05));
+            put("湖北省",new Toudifei(2.05,2.05,2.05));
+            put("湖南省",new Toudifei(2.05,2.05,2.05));
+            put("吉林省",new Toudifei(2.05,2.05,2.05));
+            put("江苏省",new Toudifei(1.5,1.5,2.3));
+            put("江西省",new Toudifei(2.05,2.05,2.05));
+            put("辽宁省",new Toudifei(2.05,2.05,2.05));
+            put("内蒙古自治区",new Toudifei(2.05,2.05,2.05));
+            put("宁夏回族自治区",new Toudifei(2.05,2.05,2.05));
+            put("青海省",new Toudifei(2.05,2.05,2.05));
+            put("山东省",new Toudifei(2.05,2.05,2.05));
+            put("山西省",new Toudifei(2.05,2.05,2.05));
+            put("陕西省",new Toudifei(2.05,2.05,2.05));
+            put("上海",new Toudifei(1.5,1.5,2.05));
+            put("四川省",new Toudifei(2.05,2.05,2.05));
+            put("天津",new Toudifei(2.05,2.05,2.05));
+            put("西藏自治区",new Toudifei(2.05,2.05,2.05));
+            put("新疆维吾尔自治区",new Toudifei(2.05,2.05,2.05));
+            put("云南省",new Toudifei(2.05,2.05,2.05));
+            put("浙江省",new Toudifei(1.5,1.5,2.05));
+            put("重庆",new Toudifei(2.05,2.05,2.05));
+            put("未知",new Toudifei(2.05,2.05,2.05));
+        }
+    };
+     
      private void setEbiao(double ebiao){
          this.ebiao = ebiao;
      }
@@ -108,6 +145,15 @@ public class Toudifei extends Feiyong{
             }else if(getMail().getYoujianzhongliang() >5){
                 feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
             }
+        if(Integer.valueOf(getMail().getShoujiriqi()) >= 20181201){
+            feiyong = 1.5;
+            if(getMail().getYoujianzhongliang() >3 && getMail().getYoujianzhongliang() <=5){
+                feiyong= feiyong + Math.ceil((getMail().getYoujianzhongliang() - 3.0))*0.3;
+            }else if(getMail().getYoujianzhongliang() >5){
+                feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
+            }
+        }
+        
         return feiyong;
     }
     

@@ -18,7 +18,7 @@ public class Yiganfeiyong extends Feiyong{
 
    HashMap<String,Double> luyunjijinghang = new HashMap<String,Double>(){
         {
-            put("上海",0.0);
+            put("上海",0.2);
             put("安徽省",0.45);
             put("浙江省",0.35);
             put("山东省",0.7);
@@ -102,69 +102,75 @@ public class Yiganfeiyong extends Feiyong{
     @Override
     public double getFeiyong() {
         double feiyong = 0.0;
-        switch(getMail().getYoujianluxiang()){
-            case "南集":
-                feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
-                break;
-            case "无锡":
-                feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                break;
-            case "经济航空":
-                feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                break;
-            case "民航":
-                feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
-                break;
-            case "上海":
-                feiyong = 0.0;
-                break;
-            case "直发-":
-                feiyong = 0.0;
-                break;
-            default:
-                
-                switch(getMail().getChanpinfenlei2()){
-                    //西藏、海南、青海、贵州、宁夏
-                    
-                    case "标准":
-                        if("陆运".equals(getMail().getYunshufangshi())){
-                            feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                        }else{
-                            if(getMail().getJidasheng().contains("西藏")||getMail().getJidasheng().contains("海南")||getMail().getJidasheng().contains("青海")||getMail().getJidasheng().contains("贵州")||getMail().getJidasheng().contains("宁夏")){
-                                feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
-                            }else if(getMail().getJidasheng().contains("浙江")||getMail().getJidasheng().contains("上海")||getMail().getJidasheng().contains("安徽")){
-                                feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                            }else{
-                                feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
-                            }
-                        }
-                        break;
-                    case "E标准":
-                        if("陆运".equals(getMail().getYunshufangshi())){
-                            feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                        }else{
-                            if(getMail().getJidasheng().contains("西藏")||getMail().getJidasheng().contains("海南")||getMail().getJidasheng().contains("青海")||getMail().getJidasheng().contains("贵州")||getMail().getJidasheng().contains("宁夏")){
-                                feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
-                            }else if (getMail().getJidasheng().contains("浙江")||getMail().getJidasheng().contains("上海")||getMail().getJidasheng().contains("安徽")){
-                                feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                            }else{
-                                feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
-                            }
-                        }
-                        break;
-                    case "快包":
-                        feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
-                        break;
-                    default:
-                        feiyong = 0;
-                        break;
-                }
-                
-                break;
-        }
-                
         
-        return feiyong;
+            switch(getMail().getYoujianluxiang()){
+                case "南集":
+                    feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
+                    break;
+                case "无锡":
+                    feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                    break;
+                case "经济航空":
+                    feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                    break;
+                case "民航":
+                    feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
+                    break;
+                case "上海":
+                    feiyong = 0.0;
+                    break;
+                case "直发-":
+                    feiyong = 0.0;
+                    break;
+                default:
+
+                    switch(getMail().getChanpinfenlei2()){
+                        //西藏、海南、青海、贵州、宁夏
+
+                        case "标准":
+                            if("陆运".equals(getMail().getYunshufangshi())){
+                                feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                            }else{
+                                if(getMail().getJidasheng().contains("西藏")||getMail().getJidasheng().contains("海南")||getMail().getJidasheng().contains("青海")||getMail().getJidasheng().contains("贵州")||getMail().getJidasheng().contains("宁夏")){
+                                    feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
+                                }else if(getMail().getJidasheng().contains("浙江")||getMail().getJidasheng().contains("上海")||getMail().getJidasheng().contains("安徽")){
+                                    feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                                }else{
+                                    feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
+                                }
+                            }
+                            break;
+                        case "E标准":
+                            if("陆运".equals(getMail().getYunshufangshi())){
+                                feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                            }else{
+                                if(getMail().getJidasheng().contains("西藏")||getMail().getJidasheng().contains("海南")||getMail().getJidasheng().contains("青海")||getMail().getJidasheng().contains("贵州")||getMail().getJidasheng().contains("宁夏")){
+                                    feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
+                                }else if (getMail().getJidasheng().contains("浙江")||getMail().getJidasheng().contains("上海")||getMail().getJidasheng().contains("安徽")){
+                                    feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                                }else{
+                                    feiyong = hangkongyunfei.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()*0.95;
+                                }
+                            }
+                            break;
+                        case "快包":
+                            feiyong = luyunjijinghang.get(getMail().getJidasheng())*getMail().getYoujianzhongliang();
+                            break;
+                        default:
+                            feiyong = 0;
+                            break;
+                    }
+
+                    break;
+            }
+        
+        
+        if(Integer.valueOf(getMail().getShoujiriqi()) <= 20181201 ){
+            return feiyong;
+        }else{
+            return feiyong*0.705;
+        }
+        
     }
     
 }

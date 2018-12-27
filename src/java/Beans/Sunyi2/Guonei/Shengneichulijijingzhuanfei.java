@@ -56,7 +56,6 @@ public class Shengneichulijijingzhuanfei extends Feiyong{
                 }else{
                     //江浙沪安徽四省经传费，
                     switch(this.getMail().getJidasheng()){
-
                         case "江苏省":
                         case "浙江省":
                         case "安徽省":

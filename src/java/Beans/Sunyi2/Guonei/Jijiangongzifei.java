@@ -24,6 +24,10 @@ public class Jijiangongzifei extends Feiyong{
             put("21529903",new Jijiangongzifei(1.95,0.5));
             put("21529902",new Jijiangongzifei(1.95,0.5));
             put("21529904",new Jijiangongzifei(1.95,0.5));
+            
+            put("21521102",new Jijiangongzifei(1.95,0.5));
+            put("21522805",new Jijiangongzifei(1.95,0.5));
+            
             put("21521303",new Jijiangongzifei(1.95,0.5));
             put("21522303",new Jijiangongzifei(1.23,0.25));
             put("21522602",new Jijiangongzifei(1.95,0.5));
