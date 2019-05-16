@@ -61,7 +61,7 @@ final  static HashMap<String,Double> jinkoushengergangongli = new HashMap<String
     @Override
     public double getFeiyong() {
         double feiyong =0.0;
-        feiyong = 0.775*jinkoushengergangongli.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()/1000.0;
+        feiyong = 0.705*jinkoushengergangongli.get(getMail().getJidasheng())*getMail().getYoujianzhongliang()/1000.0;
         
         return feiyong;
     }

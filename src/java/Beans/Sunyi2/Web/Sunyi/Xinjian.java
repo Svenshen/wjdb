@@ -23,7 +23,7 @@ public class Xinjian {
     String beizhu;
     int leixing;//1--国内，2--国际
     public static void main(String[] args) {
-        Xinjian x = new Xinjian("2018-01-01","2018-11-31",2,"","2018年全年测算");
+        Xinjian x = new Xinjian("2018-12-01","2018-12-31",1,"","2018年12月新价格测算修正");
         x.tijiao();
     }
     public Xinjian(String kshijian,String jshijian,int leixing,String kehu,String beizhu){

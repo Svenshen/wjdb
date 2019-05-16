@@ -126,33 +126,39 @@ public class Toudifei extends Feiyong{
      
     @Override
     public double getFeiyong() {
-            double feiyong = 0.0;
-        
-        switch(getMail().getChanpinfenlei2()){
-            case "快包":
-                feiyong = toudifei.get(getMail().getJidasheng()).getKuaibao();
-                break;
-            case "E标准":
-                feiyong = toudifei.get(getMail().getJidasheng()).getEbiao();
-                break;
-            default:
-                feiyong = toudifei.get(getMail().getJidasheng()).getQita();
-                break;
-                
-    }
+        double feiyong = 0.0;
+        feiyong = 1.5;
         if(getMail().getYoujianzhongliang() >3 && getMail().getYoujianzhongliang() <=5){
             feiyong= feiyong + Math.ceil((getMail().getYoujianzhongliang() - 3.0))*0.3;
-            }else if(getMail().getYoujianzhongliang() >5){
-                feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
-            }
-        if(Integer.valueOf(getMail().getShoujiriqi()) >= 20181201){
-            feiyong = 1.5;
-            if(getMail().getYoujianzhongliang() >3 && getMail().getYoujianzhongliang() <=5){
-                feiyong= feiyong + Math.ceil((getMail().getYoujianzhongliang() - 3.0))*0.3;
-            }else if(getMail().getYoujianzhongliang() >5){
-                feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
-            }
+        }else if(getMail().getYoujianzhongliang() >5){
+            feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
         }
+
+//        switch(getMail().getChanpinfenlei2()){
+//            case "快包":
+//                feiyong = toudifei.get(getMail().getJidasheng()).getKuaibao();
+//                break;
+//            case "E标准":
+//                feiyong = toudifei.get(getMail().getJidasheng()).getEbiao();
+//                break;
+//            default:
+//                feiyong = toudifei.get(getMail().getJidasheng()).getQita();
+//                break;
+//                
+//    }
+//        if(getMail().getYoujianzhongliang() >3 && getMail().getYoujianzhongliang() <=5){
+//            feiyong= feiyong + Math.ceil((getMail().getYoujianzhongliang() - 3.0))*0.3;
+//            }else if(getMail().getYoujianzhongliang() >5){
+//                feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
+//            }
+//        if(Integer.valueOf(getMail().getShoujiriqi()) >= 20181201){
+//            feiyong = 1.5;
+//            if(getMail().getYoujianzhongliang() >3 && getMail().getYoujianzhongliang() <=5){
+//                feiyong= feiyong + Math.ceil((getMail().getYoujianzhongliang() - 3.0))*0.3;
+//            }else if(getMail().getYoujianzhongliang() >5){
+//                feiyong= feiyong + 2*0.3+Math.ceil((getMail().getYoujianzhongliang() - 5.0))*0.4;
+//            }
+//        }
         
         return feiyong;
     }

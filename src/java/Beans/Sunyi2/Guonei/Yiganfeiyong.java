@@ -164,11 +164,13 @@ public class Yiganfeiyong extends Feiyong{
                     break;
             }
         
-        
+        if("陆运".equals(getMail().getYunshufangshi())){
         if(Integer.valueOf(getMail().getShoujiriqi()) <= 20181201 ){
             return feiyong;
         }else{
             return feiyong*0.705;
+        }}else{
+            return feiyong;
         }
         
     }

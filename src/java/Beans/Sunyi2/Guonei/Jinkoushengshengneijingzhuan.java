@@ -31,7 +31,7 @@ public class Jinkoushengshengneijingzhuan extends Feiyong{
             put("湖北省",true);
             put("湖南省",true);
             put("吉林省",true);
-            put("江苏省",false);
+            put("江苏省",true);
             put("江西省",true);
             put("辽宁省",true);
             put("内蒙古自治区",true);
